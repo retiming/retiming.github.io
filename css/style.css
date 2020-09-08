@@ -18,6 +18,10 @@ p a, table.affiliations a, table.menu a {
 	text-decoration: none;
 }
 
+strong, b {
+    font-weight: 500;
+}
+
 p.author {
     font-size: 13pt;
     text-align: center;
