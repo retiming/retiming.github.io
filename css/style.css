@@ -1,0 +1,116 @@
+/* CSS Document */
+
+body {
+	font-family: Roboto, Google Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: 16px;
+	color: #333;
+	background-color: #fff;
+	line-height: 1.5em;
+}
+
+p a, table.affiliations a, table.menu a {
+	border-bottom: solid 1px #ddd;
+	color: inherit;
+	text-decoration: none;
+}
+
+p.author {
+    font-size: 13pt;
+    text-align: center;
+    margin: 0 0 0 0;
+    padding: 0 3em 0 3em;
+}
+
+.author {
+	margin: 0pt 10pt;
+}
+
+sup {
+    font-size: 0.7em;
+    position: relative;
+    top: 0em;
+}
+
+.container {
+	width: 1000px;
+	min-height: 1200px;
+	max-height: 999999px; /* prevents font boosting */
+	margin: 0 auto; /* top and bottom, right and left */
+	/*	border: 1px solid #000; */
+	text-align: left; /* top, right, bottom, left */
+	color: #333;
+	background: #fff;
+	padding-top: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+}
+
+.venue {
+	font-size: 120%;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.title {
+	font-family: Roboto, Google Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	font-size: 190%;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	margin-top: 14px; /* h1 default */
+	margin-bottom: 14px;
+	padding-top: 40px;
+	padding-bottom: 5px;
+	line-height: 1.5em;
+}
+
+table.affiliations {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: 80%;
+    max-width: 1080px;
+}
+
+table.affiliations td {
+    padding-top: .5em;
+    text-align: center;
+    width: 25%;
+    font-size: 11pt;
+}
+
+table#video {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.caption {
+	font-style: italic;
+	font-size: 100%;
+}
+
+.section{
+	font-size: 140%;
+	font-weight: bold;
+}
+
+.bibtex {
+	font-family: Google Sans, Courier, monospace;
+	white-space: pre;
+}
+
+.date {
+	font-size: 80%;
+}
+
+table.data td {
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-bottom: 5px;
+	vertical-align: top;
+}

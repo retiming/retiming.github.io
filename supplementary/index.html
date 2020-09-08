@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Layered Neural Rendering for Retiming People in Video: Supplementary Material</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="container">
+  <h1 align="center">Layered Neural Rendering for Retiming People in Video</h1>
+  <h2 align="center">Supplementary Material</h2>
+  <h3 align="center"><a href="http://retiming.github.io">Main Project Page</a></h3>
+  <p align="center">&nbsp;</p>
+  <ul>
+    <li><a href="#results">Results (supplements Section 6)</a></li>
+    <li><a href="#baseline_comparisons">Comparison with image matting [Hou and Liu 2019] and Double-DIP [Gandelsman et al. 2019]</a></li>
+    <li><a href="#densepose_vs_our_uvs">DensePose UVs vs. Our Keypoints-to-UVs (Section 4.5)</a></li>
+    <li><a href="#keypoint_errors">Fixing Keypoint Errors</a></li>
+    <li><a href="#training_visualization">Training visualization (Section 4.3)</a></li>
+    <li><a href="#detail_transfer">Residual Detail Transfer (Section 4.4)</a></li>
+  </ul>
+  <p><br/><span class="emph">We recommend watching all videos in full screen.</span></p>
+  <p>&nbsp;</p>
+  <hr />
+  <h2 align="left"><a name="results" id="results"></a>Results (Section 6)</h2>
+  <p align="left">The following videos show, for all the results in the paper: (a) the input video, (b) tracked keypoints, (c) trimaps, and (d) the full layer decomposition.</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><h3>&quot;Ballroom&quot;</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/ballroom_grid.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><h3>&quot;Reflections&quot;</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/reflection_grid.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><h3>&quot;Splash&quot;</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/splash_grid.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+      <tr>
+        <td>For this sequence alone, we edited the trimap for Layer 1 for a single frame to include the water splash region, and then duplicated it for a segment of the video. This editing took under 1 minute.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><h3>&quot;Trampoline&quot;</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/trampoline_grid.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><h3>&quot;Kids Running&quot;</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/kids_run_grid.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><h3>&quot;Cartwheel&quot;</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/cartwheel_grid.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><h3>&quot;BMX&quot;</h3></td>
+      </tr>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/bmx_grid.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <hr />
+  <h2 align="left"><a name="baseline_comparisons" id="baseline_comparisons"></a>Comparison with image matting and Double-DIP</h2>
+  <p align="left">We compare our method with Double-DIP <a href="#ref1">[2]</a> (the input video and their result are taken from their webpage) and with state-of-the-art deep-learning image matting method <a href="#ref1">[4]</a>. Our method is able to output a cleaner segment around the person than both Double-DIP and image matting. We also manage to fully segment the blurred bike, despite starting with a rough trimap that only represents the person.</p>
+  <p align="left">&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/bmx_comparisons.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p><br />
+  </p>
+  <hr />
+  <h2 align="left"><a name="densepose_vs_our_uvs" id="densepose_vs_our_uvs"></a>DensePose UVs vs. Our Keypoints-to-UVs</h2>
+  <p align="left">We show DensePose <a href="#ref3">[3]</a> UVs next to the results of our keypoint-to-UV network. We do not use DensePose outputs because they sometimes produce errors which are difficult to correct, such as missing body parts, and also do not provide predictions for occluded regions. Instead we use AlphaPose to predict keypoints, which are complete and often more robust, and can be easily manually corrected if they fail. Using this method we can guarantee complete UV maps. Notice that our predicted UVs do not perfectly match the silhouettes of the people. This is acceptable for our use case because our method can refine the initial bounds set by the UV silhouettes; what is important is that the UV exists in roughly the correct region, otherwise those pixels may be reconstructed in an incorrect layer.</p>
+  <p align="left">&nbsp;</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/densepose_comparison.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p><br />
+  </p>
+  <hr />
+  <h2 align="left"><a name="keypoint_errors" id="keypoint_errors"></a>Fixing Keypoint Errors</h2>
+  <p align="left">AlphaPose <a href="#ref3">[1]</a> keypoints (center) are generally robust but struggle in challenging cases of occlusions. In such cases, we can manually correct the keypoint errors, as well as errors in the tracking (right).  In this paper, we manually fixed these errors using a rotoscoping tool for between zero and 10% of input frames (which took 25 minutes for the Ballroom example below).<br />
+  Colors in the video represent tracked IDs.</p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><video width="800" controls="controls">
+            <source src="videos/keypoint_errors.mp4" type="video/mp4" />
+          </video></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p><br />
+  </p>
+  <hr />
+  <h2 align="left"><a name="training_visualization" id="training_visualization"></a>Training Visualization</h2>
+  <p>In the following figure, we visualize different epochs during training to see how correlations are gradually learned. Early in training at epoch 200, the model has only captured the rough outlines of the people. By epoch 1000, it has refined the outlines and learned some color information, as well as a faint reflection. By 1600 epochs, the model is able to accurately reconstruct the people, their reflections, and their shadows. Portions of the background are also eventually captured in the people layers due to imperfect camera stabilization.</p>
+  <p><br />
+  </p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><img src="images/training_vis.png" width="800"></td>
+      </tr>
+      <tr>
+        <td align="center"><strong><em>Visualization of epochs during training</em></strong><em>. The model gradually learns to reconstruct the
+          original video frame, starting with the background and people, and eventually learning correlations such as
+          refections and shadows.</em></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <hr />
+  <h2><a name="detail_transfer" id="detail_transfer"></a>Residual Detail Transfer</h2>
+  <p>The following figure shows our method for transferring missing high-frequency details back to our predicted layers. CNNs 
+    often struggle to produce sharp details without expensive perceptual and/or adversarial losses. We avoid this expense and simply compute a residual image, which is the difference between the original frame and our reconstruction. Using the computed transmittance maps (defined in the main paper), we can add the residual details back to the appropriate layers. The transmittance maps are computed from the predicted<br />
+    alpha mattes and indicate the unoccluded regions of each layer.</p>
+  <p><br />
+  </p>
+  <table width="800" border="0" align="center">
+    <tbody>
+      <tr>
+        <td align="center"><img src="images/residual.png" width="800"></td>
+      </tr>
+      <tr>
+        <td align="center"><strong><em>Transfer of residual detail to produce high-resolution layers</em></strong><em>. CNN outputs (b) often lack high-resolution details. We add these missing residual details ((c), colors enhanced for visualization) back to our CNN output layers (e) by scaling the residual by each layer's computed transmittance (d). The transmittance ensures that the residual detail is not added to any disoccluded region. White pixels in the transmittance represent a value of 1 (unoccluded), and black pixels, 0 (occluded). Our final layer outputs (f) contain the missing high-frequency details, notably in the face region. Best viewed zoomed-in.</em></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <h2>References</h2>
+  <p><a name="ref1" id="ref1"></a>[1] Hao-Shu Fang, Shuqin Xie, Yu-Wing Tai, and Cewu Lu. RMPE: Regional multi-person pose estimation. 
+    In ICCV, 2017. </p>
+  <p><a name="ref2" id="ref2"></a>[2] Yossi Gandelsman, Assaf Shocher, and Michal Irani. &quot;Double-DIP&quot;: Unsupervised image decomposition 
+    via coupled deep-image-priors. In CVPR, 2019.<br />
+    <br />
+    <a name="ref3" id="ref3"></a>[3] Riza Alp Guler, Natalia Neverova, and Iasonas Kokkinos. Densepose: Dense human pose estimation in 
+    the wild. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pages 
+    7297-7306, 2018.<br />
+    <br />
+    <a name="ref4" id="ref4"></a>[4] Qiqi Hou and Feng Liu. Context-aware image matting for simultaneous foreground and alpha estimation. 
+    In ICCV, 2019.</p>
+</div>
+</body>
+</html>

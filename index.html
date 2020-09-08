@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Layered Neural Rendering for Retiming People in Video</title>
+  <link href="./css/style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159450849-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-159450849-2');
+  </script>
+  <meta name="description" content="Project page for 'Layered Neural Rendering for Retiming People in Video.'">
+</head>
+<body>
+  <p class="title">Layered Neural Rendering for Retiming People in Video</p>
+  <p class="author">
+    <span class="author"><a target="_blank" href="http://www.erikalu.com/">Erika Lu</a>&nbsp;<sup>1</sup></span>
+    <span class="author"><a target="_blank" href="http://people.csail.mit.edu/fcole/">Forrester Cole</a>&nbsp;<sup>2</sup></span>
+    <span class="author"><a target="_blank" href="http://people.csail.mit.edu/talidekel/">Tali Dekel</a>&nbsp;<sup>2</sup></span>
+    <span class="author"><a target="_blank" href="https://weidixie.github.io/weidi-personal-webpage/">Weidi Xie</a>&nbsp;<sup>1</sup></span>
+    <span class="author"><a target="_blank" href="https://www.robots.ox.ac.uk/~az/">Andrew Zisserman</a>&nbsp;<sup>1,&nbsp;3</sup></span>
+    <span class="author"><a target="_blank" href="http://salesin.cs.washington.edu/">David Salesin</a>&nbsp;<sup>2</sup></span>
+    <span class="author"><a target="_blank" href="https://billf.mit.edu/">William T. Freeman</a>&nbsp;<sup>2,&nbsp;4</sup></span>
+    <span class="author"><a target="_blank" href="http://people.csail.mit.edu/mrub/">Michael Rubinstein</a>&nbsp;<sup>2</sup></span>
+  </p>
+  <table border="0" align="center" class="affiliations" width="1200px">
+    <tbody align="center">
+      <tr>
+        <td><sup>1</sup>&nbsp;<a href="http://www.robots.ox.ac.uk/~vgg/">VGG, University of Oxford</a></td>
+        <td><sup>2</sup>&nbsp;<a href="https://research.google.com/">Google Research</a></td>
+        <td><sup>3</sup>&nbsp;<a href="https://deepmind.com/">DeepMind</a></td>
+        <td><sup>4</sup>&nbsp;<a href="http://www.csail.mit.edu/">MIT CSAIL</a></td>
+      </tr>
+      <tr>
+        <td align="center"><img src="./assets/oxford_logo.png" height="48" alt=""></td>
+        <td align="center"><img src="./assets/GoogleAI_logo.png" height="48" alt=""></td>
+        <td align="center"><img src="./assets/deepmind_logo.png" height="48" alt=""></td>
+        <td align="center"><img src="./assets/csail_logo.png" height="48" alt=""></td>
+      </tr>
+    </tbody></table>
+    <table width="999" border="0" align="center" class="menu">
+      <tbody>
+        <tr>
+          <td align="center">| <a href="#paper">Paper</a> | <a href="#video">Video</a> |</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="container">
+      <table width="200" border="0" align="center">
+        <tbody><tr>
+          <td><img src="./assets/teaser_cc.jpg" width="990" alt=""></td>
+        </tr>
+        <tr>
+          <td class="caption"><p><b>Making all children jump into the pool together &mdash; in post-processing!</b> In the original video (left, top) each child is jumping into the pool at a different time. In our computationally retimed video (left, bottom), the jumps of children I and III are time-aligned with that of child II, such that they all jump together into the pool (notice that child II remains unchanged in the input and output frames). In this paper, we present a method to produce this and other people retiming effects in natural, ordinary videos. Our method is based on a novel deep neural network that learns a layered decomposition of the input video (right). Our model not only disentangles the motions of people in different layers, but can also capture the various scene elements that are <b>correlated</b> with those people (e.g., water splashes as the children hit the water, shadows, reflections). When people are retimed, those related elements get automatically retimed with them, which allows us to create realistic and faithful re-renderings of the video for a variety of retiming effects. The full input and retimed sequences are available in the supplementary video.
+          </p></td>
+        </tr>
+      </tbody></table>
+      <p><span class="section">Abstract</span> </p>
+      <p>We present a method for retiming people in an ordinary, natural video &mdash; manipulating and editing the time in which different motions of individuals in the video occur. We can temporally align different motions, change the speed of certain actions (speeding up/slowing down, or entirely "freezing" people), or "erase" selected people from the video altogether. We achieve these effects computationally via a dedicated learning-based layered video representation, where each frame in the video is decomposed into separate RGBA layers, representing the appearance of different people in the video. A key property of our model is that it not only disentangles the direct motions of each person in the input video, but also correlates each person <em>automatically</em> with the scene changes they generate &mdash; e.g., shadows, reflections, and motion of loose clothing. The layers can be individually retimed and recombined into a new video, allowing us to achieve realistic, high-quality renderings of retiming effects for real-world videos depicting complex actions and involving multiple individuals, including dancing, trampoline jumping, or group running.<br>
+      </p>
+      <!-- <p class="section">&nbsp;</p> -->
+      <table width="200" border="0" align="center" id="video">
+        <tbody>
+          <tr>
+            <td><iframe width="853" height="480" src="https://www.youtube.com/embed/JKp192FRQdA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="section" id="paper">Paper</p>
+      <table width="940" border="0">
+        <tbody>
+          <tr>
+            <td height="100"><a href="assets/retiming_people.pdf"><img src="./assets/paper_preview.png" alt="" width="140" height="167"></a></td>
+            <td width="750"><p><b>Layered Neural Rendering for Retiming People in Video</b><br>
+              Erika Lu, Forrester Cole, Tali Dekel, Weidi Xie, Andrew Zisserman, David Salesin, William T. Freeman, and Michael Rubinstein<br>
+              <em>To appear in SIGGRAPH Asia 2020</em><br>
+              [<a href="assets/retiming_people.pdf">paper</a>] </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="section">&nbsp;</p>
+      <p class="section">Supplementary Material</p>
+      <table width="587" height="136" border="0">
+        <tbody>
+          <tr>
+            <td width="175"><img src="./assets/supp_fig.png" alt="" height="150"></td>
+            <td width="388" align="left"><ul>
+              <li><p>[<a href="./supplementary/index.html">supplementary page</a>]</p></li>
+            </ul></td>
+          </tr>
+        </tbody>
+      </table>
+      <p>&nbsp;</p>
+      <blockquote>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><em><b>Acknowledgements. </b>The original "Ballroom" video belongs to Desert Classic Dance. This work was funded in part by the EPSRC Programme Grant Seebibyte EP/M013774/1.
+        </em>  </p>
+      </blockquote>
+    </div>
+
+
+  </body></html>
