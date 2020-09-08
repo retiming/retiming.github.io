@@ -6,6 +6,7 @@
 body {
 	font-family: Roboto, Google Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	font-size: 16px;
+	font-weight: 400;
 	color: #333;
 	background-color: #fff;
 	line-height: 1.5em;
@@ -61,7 +62,7 @@ sup {
 .title {
 	font-family: Roboto, Google Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	font-size: 190%;
-	font-weight: bold;
+	font-weight: 500;
 	display: block;
 	text-align: center;
 	margin-top: 14px; /* h1 default */
@@ -99,7 +100,7 @@ table#video {
 
 .section{
 	font-size: 140%;
-	font-weight: bold;
+	font-weight: 500;
 }
 
 .bibtex {
