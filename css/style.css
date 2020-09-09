@@ -12,7 +12,7 @@ body {
 	line-height: 1.5em;
 }
 
-p a, table.affiliations a, table.menu a {
+p a, table.affiliations a {
 	border-bottom: solid 1px #ddd;
 	color: inherit;
 	text-decoration: none;
