@@ -29,13 +29,15 @@
   <table border="0" align="center" class="affiliations" width="1200px">
     <tbody align="center">
       <tr>
-        <td><sup>1</sup>&nbsp;<a href="https://research.google.com/">Google Research</a></td>
-        <td><sup>2</sup>&nbsp;<a href="http://www.robots.ox.ac.uk/~vgg/">VGG, University of Oxford</a></td>
+        <td style="text-align: right"><img src="./assets/GoogleAI_logo.png" height="48" alt=""></td>
+        <td style="text-align: left">&nbsp;<sup>1</sup>&nbsp;<a href="https://research.google.com/">Google Research</a></td>
+        <td style="text-align: right"><img src="./assets/oxford_logo.png" height="48" alt=""></td>
+        <td style="text-align: left">&nbsp;<sup>2</sup>&nbsp;<a href="http://www.robots.ox.ac.uk/~vgg/">VGG, University of Oxford</a></td>
       </tr>
-      <tr>
+<!--       <tr>
         <td align="center"><img src="./assets/GoogleAI_logo.png" height="48" alt=""></td>
         <td align="center"><img src="./assets/oxford_logo.png" height="48" alt=""></td>
-      </tr>
+      </tr> -->
     </tbody></table>
     <table width="999" border="0" align="center" class="menu">
       <tbody>
@@ -47,59 +49,81 @@
 
     <div class="container">
       <table width="200" border="0" align="center">
-        <tbody><tr>
-          <td><img src="./assets/teaser_cc.jpg" width="990" alt=""></td>
-        </tr>
-        <tr>
-          <td class="caption"><p><b>Making all children jump into the pool together &mdash; in post-processing!</b> In the original video (left, top) each child is jumping into the pool at a different time. In our computationally retimed video (left, bottom), the jumps of children I and III are time-aligned with that of child II, such that they all jump together into the pool (notice that child II remains unchanged in the input and output frames). In this paper, we present a method to produce this and other people retiming effects in natural, ordinary videos. Our method is based on a novel deep neural network that learns a layered decomposition of the input video (right). Our model not only disentangles the motions of people in different layers, but can also capture the various scene elements that are <b>correlated</b> with those people (e.g., water splashes as the children hit the water, shadows, reflections). When people are retimed, those related elements get automatically retimed with them, which allows us to create realistic and faithful re-renderings of the video for a variety of retiming effects. The full input and retimed sequences are available in the supplementary video.
-          </p></td>
-        </tr>
-      </tbody></table>
-      <p><span class="section">Abstract</span> </p>
-      <p>We present a method for retiming people in an ordinary, natural video &mdash; manipulating and editing the time in which different motions of individuals in the video occur. We can temporally align different motions, change the speed of certain actions (speeding up/slowing down, or entirely "freezing" people), or "erase" selected people from the video altogether. We achieve these effects computationally via a dedicated learning-based layered video representation, where each frame in the video is decomposed into separate RGBA layers, representing the appearance of different people in the video. A key property of our model is that it not only disentangles the direct motions of each person in the input video, but also correlates each person <em>automatically</em> with the scene changes they generate &mdash; e.g., shadows, reflections, and motion of loose clothing. The layers can be individually retimed and recombined into a new video, allowing us to achieve realistic, high-quality renderings of retiming effects for real-world videos depicting complex actions and involving multiple individuals, including dancing, trampoline jumping, or group running.<br>
-      </p>
-      <!-- <p class="section">&nbsp;</p> -->
-      <table width="200" border="0" align="center" id="video">
         <tbody>
           <tr>
-            <td><iframe width="853" height="480" src="https://www.youtube.com/embed/KAVCHR1mucw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </td>
+            <td colspan="3" align="center"><img src="./assets/teaser1.gif" width="720" alt="" style="margin-top:10px"></td>
           </tr>
-        </tbody>
-      </table>
-      <p class="section" id="paper">Paper</p>
-      <table width="940" border="0">
-        <tbody>
           <tr>
-            <td height="100"><a href="assets/retiming_people.pdf"><img src="./assets/paper_preview.png" alt="" width="140" height="167"></a></td>
-            <td width="750"><p><b>Layered Neural Rendering for Retiming People in Video</b><br>
-              Erika Lu, Forrester Cole, Tali Dekel, Weidi Xie, Andrew Zisserman, David Salesin, William T. Freeman, and Michael Rubinstein<br>
-              <em>To appear in SIGGRAPH Asia 2020</em><br>
-              [<a href="assets/retiming_people.pdf">paper</a>] </p>
-            </td>
+            <td class="label">Original Video<br>(Jump separately)</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td class="label">Our Retimed Result<br><span class="highlight">(Jump together!)</span></td>
           </tr>
-        </tbody>
-      </table>
-      <p class="section">&nbsp;</p>
-      <p class="section">Supplementary Material</p>
-      <table width="587" height="136" border="0">
-        <tbody>
-          <tr>
-            <td width="245"><img src="./assets/supp_fig.png" alt="" height="150"></td>
-            <td align="left">
-              <p>[<a href="./supplementary/index.html">supplementary page</a>]</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <p>&nbsp;</p>
-      <blockquote>
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p><em><b>Acknowledgements. </b>The original "Ballroom" video belongs to Desert Classic Dance. This work was funded in part by the EPSRC Programme Grant Seebibyte EP/M013774/1.
-        </em>  </p>
-      </blockquote>
-    </div>
+        </tbody></table>
+        <table width="200" border="0" align="center" style="table-layout: fixed; width: 100%">
+          <tbody>
+            <tr>
+              <td colspan="4" class="caption"><p><b>Making all children jump into the pool together &mdash; in post-processing!</b> In the original video (left) each child is jumping into the pool at a different time. In our computationally retimed video (right), the jumps are aligned such that all the children jump together into the pool (notice that the child on the left remains unchanged in the input and output videos). In this paper, we present a method to produce this and other people retiming effects in natural, ordinary videos.
+              </p></td>
+            </tr>
+            <tr>
+              <td colspan="4"><img src="./assets/teaser2.gif" width="980" alt=""></td>
+            </tr>
+            <tr style="text-align:center">
+              <td>Background Layer</td>
+              <td>Layer 1</td>
+              <td>Layer 2</td>
+              <td>Layer 3</td>
+            </tr>
+            <tr>
+              <td colspan="4" class="caption"><p><b>Decomposing a video into layers.</b> Our method is based on a novel deep neural network that learns a layered decomposition of the input video. Our model not only disentangles the motions of people in different layers, but can also capture the various scene elements that are <b>correlated</b> with those people (e.g., water splashes as the children hit the water, shadows, reflections). When people are retimed, those related elements are automatically retimed with them, which allows us to create realistic and faithful re-renderings of the video for a variety of retiming effects.
+              </p></td>
+            </tr>
+
+          </tbody></table>
+          <p><span class="section">Abstract</span> </p>
+          <p>We present a method for retiming people in an ordinary, natural video &mdash; manipulating and editing the time in which different motions of individuals in the video occur. We can temporally align different motions, change the speed of certain actions (speeding up/slowing down, or entirely "freezing" people), or "erase" selected people from the video altogether. We achieve these effects computationally via a dedicated learning-based layered video representation, where each frame in the video is decomposed into separate RGBA layers, representing the appearance of different people in the video. A key property of our model is that it not only disentangles the direct motions of each person in the input video, but also correlates each person <em>automatically</em> with the scene changes they generate &mdash; e.g., shadows, reflections, and motion of loose clothing. The layers can be individually retimed and recombined into a new video, allowing us to achieve realistic, high-quality renderings of retiming effects for real-world videos depicting complex actions and involving multiple individuals, including dancing, trampoline jumping, or group running.<br>
+          </p>
+          <table width="200" border="0" align="center" id="video">
+            <tbody>
+              <tr>
+                <td><iframe width="853" height="480" src="https://www.youtube.com/embed/KAVCHR1mucw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="section" id="paper">Paper</p>
+          <table width="940" border="0">
+            <tbody>
+              <tr>
+                <td height="100"><a href="assets/retiming_people.pdf"><img src="./assets/paper_preview.png" alt="" width="140" height="167"></a></td>
+                <td width="750"><p><b>Layered Neural Rendering for Retiming People in Video</b><br>
+                  Erika Lu, Forrester Cole, Tali Dekel, Weidi Xie, Andrew Zisserman, David Salesin, William T. Freeman, and Michael Rubinstein<br>
+                  <em>To appear in SIGGRAPH Asia 2020</em><br>
+                  [<a href="assets/retiming_people.pdf">paper</a>] </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="section">&nbsp;</p>
+          <p class="section">Supplementary Material</p>
+          <table width="587" height="136" border="0">
+            <tbody>
+              <tr>
+                <td width="245"><img src="./assets/supp_fig.png" alt="" height="150"></td>
+                <td align="left">
+                  <p>[<a href="./supplementary/index.html">supplementary page</a>]</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>&nbsp;</p>
+          <blockquote>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p><em><b>Acknowledgements. </b>The original "Ballroom" video belongs to Desert Classic Dance. This work was funded in part by the EPSRC Programme Grant Seebibyte EP/M013774/1.
+            </em>  </p>
+          </blockquote>
+        </div>
 
 
-  </body></html>
+      </body></html>
